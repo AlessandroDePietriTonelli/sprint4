@@ -7,6 +7,7 @@ const nextBtn = document.getElementById('nextBtn');
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
+const section = document.getElementById('section');
 
 function getJoke() {
     fetch(' https://icanhazdadjoke.com/', {
@@ -30,7 +31,7 @@ function getChuckNorris() {
     .then(res => res.json())
     .then(datos => {
         if(joke !== null && joke !== undefined){
-            joke.innerHTML = `<h5><strong>${datos.value}</strong></h5>`;
+            joke.innerHTML = `<p><strong>${datos.value}</strong></p>`;
             console.log(datos.value)
             actualJoke = datos.value;
             }
@@ -46,6 +47,7 @@ function alternateJoke() {
     }
 } 
 
+changeBlob()
 alternateJoke()
 
 
@@ -61,6 +63,7 @@ function showMeNextJoke() {
     console.log(reportAcudits)
     
     alternateJoke()
+    changeBlob()
 
 }
 
@@ -75,6 +78,26 @@ function assignScoreTwo() {
 function assignScoreThree() {
     score = 3;
 }
+
+function changeBlob() {
+    const blobs = ['blob1', 'blob2', 'blob3', 'blob4'];
+    const randomIndex = Math.floor(Math.random() * 4);
+    if(section?.classList.contains(blobs[0])){
+        section.classList.remove(blobs[0])
+        section.classList.add(blobs[randomIndex])
+    } else if (section?.classList.contains(blobs[1])) {
+        section.classList.remove(blobs[1])
+        section.classList.add(blobs[randomIndex]) 
+    } else if (section?.classList.contains(blobs[2])) {
+        section.classList.remove(blobs[2])
+        section.classList.add(blobs[randomIndex]) 
+    } else if (section?.classList.contains(blobs[3])) {
+        section.classList.remove(blobs[3])
+        section.classList.add(blobs[randomIndex])
+    }
+    
+}
+
 nextBtn?.addEventListener('click', showMeNextJoke);
 btn1?.addEventListener('click',assignScoreOne)
 btn2?.addEventListener('click',assignScoreTwo)

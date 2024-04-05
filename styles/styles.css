@@ -1,0 +1,44 @@
+.principal {
+    height: 25rem;
+    position: relative;
+}
+
+.blob1 {
+    background-image: url(../img/blob1.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 140px;
+}
+
+.blob2 {
+    background-image: url(../img/blob2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 140px;
+}
+
+.blob3 {
+    background-image: url(../img/blob3.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 140px;
+}
+
+
+.blob4 {
+    background-image: url(../img/blob4.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    padding: 140px;
+}
+
+#joke {
+    width: 60%;
+    max-height: 180px;
+    text-align: center;
+    align-self: center;
+}
