@@ -23,7 +23,27 @@ function getJoke() {
         }
     });
 }
-getJoke();
+function getChuckNorris() {
+    fetch('https://api.chucknorris.io/jokes/random')
+        .then(res => res.json())
+        .then(datos => {
+        if (joke !== null && joke !== undefined) {
+            joke.innerHTML = `<h5><strong>${datos.value}</strong></h5>`;
+            console.log(datos.value);
+            actualJoke = datos.value;
+        }
+    });
+}
+function alternateJoke() {
+    const random = Math.floor(Math.random() * 10) + 1;
+    if (random % 2 === 0) {
+        getJoke();
+    }
+    else {
+        getChuckNorris();
+    }
+}
+alternateJoke();
 function showMeNextJoke() {
     let obj = {
         data: new Date(),
@@ -33,7 +53,7 @@ function showMeNextJoke() {
     reportAcudits.push({ obj });
     score = 0;
     console.log(reportAcudits);
-    getJoke();
+    alternateJoke();
 }
 function assignScoreOne() {
     score = 1;
