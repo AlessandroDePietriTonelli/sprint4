@@ -3,6 +3,21 @@
     position: relative;
 }
 
+.emoji-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+h4 {
+    margin-top: 16px !important;
+}
+
+#whetBox {
+    display: flex;
+}
+
 .blob1 {
     background-image: url(../img/blob1.svg);
     background-repeat: no-repeat;
