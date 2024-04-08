@@ -21,7 +21,7 @@ Serás responsable de llevar a cabo la base del proyecto para hacer una demostra
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tuusuario/sprint4.git
+   git clone https://github.com/AlessandroDePietriTonelli/sprint4.git
    ```
 
 2. Ingresa al directorio del proyecto:
