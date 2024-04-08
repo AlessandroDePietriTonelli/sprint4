@@ -19,35 +19,36 @@ h4 {
 }
 
 .blob1 {
-    background-image: url(../img/blob1.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: url(../img/blob1.svg), url(../img/blob1.svg), url(../img/blob1.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: contain, auto 100px, auto 100px; 
+    background-position: center, bottom left, top right ;
     padding: 140px;
+    
 }
 
 .blob2 {
-    background-image: url(../img/blob2.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: url(../img/blob2.svg), url(../img/blob2.svg), url(../img/blob2.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: contain, auto 100px, auto 100px; 
+    background-position: center, bottom left, top right ;
     padding: 140px;
 }
 
 .blob3 {
-    background-image: url(../img/blob3.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: url(../img/blob3.svg), url(../img/blob3.svg), url(../img/blob3.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: contain, auto 100px, auto 100px; 
+    background-position: center, bottom left, top right ;
     padding: 140px;
 }
 
 
 .blob4 {
-    background-image: url(../img/blob4.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: url(../img/blob4.svg), url(../img/blob4.svg), url(../img/blob4.svg);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: contain, auto 100px, auto 100px; 
+    background-position: center, bottom left, top right ;
     padding: 140px;
 }
 

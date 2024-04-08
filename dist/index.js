@@ -1,37 +1,38 @@
 "use strict";
-const reportAcudits = [];
+let reportAcudits = [];
 let score = 0;
-let actualJoke = "";
-const joke = document.getElementById('joke');
-const nextBtn = document.getElementById('nextBtn');
-const btn1 = document.getElementById('btn1');
-const btn2 = document.getElementById('btn2');
-const btn3 = document.getElementById('btn3');
-const section = document.getElementById('section');
+const joke = document.getElementById("joke");
+const nextBtn = document.getElementById("nextBtn");
+const btn1 = document.getElementById("btn1");
+const btn2 = document.getElementById("btn2");
+const btn3 = document.getElementById("btn3");
+const section = document.getElementById("section");
 function getJoke() {
-    fetch(' https://icanhazdadjoke.com/', {
-        method: 'GET',
+    fetch(" https://icanhazdadjoke.com/", {
+        method: "GET",
         headers: {
-            'Accept': 'application/json'
-        }
+            Accept: "application/json",
+        },
     })
-        .then(res => res.json())
-        .then(datos => {
+        .then((res) => res.json())
+        .then((datos) => {
         if (joke !== null && joke !== undefined) {
             joke.innerHTML = `<h5><strong>${datos.joke}</strong></h5>`;
             console.log(datos.joke);
-            actualJoke = datos.joke;
+            let actualJoke = datos.joke;
+            pushJoke(actualJoke);
         }
     });
 }
 function getChuckNorris() {
-    fetch('https://api.chucknorris.io/jokes/random')
-        .then(res => res.json())
-        .then(datos => {
+    fetch("https://api.chucknorris.io/jokes/random")
+        .then((res) => res.json())
+        .then((datos) => {
         if (joke !== null && joke !== undefined) {
             joke.innerHTML = `<p><strong>${datos.value}</strong></p>`;
             console.log(datos.value);
-            actualJoke = datos.value;
+            let actualJoke = datos.value;
+            pushJoke(actualJoke);
         }
     });
 }
@@ -46,29 +47,45 @@ function alternateJoke() {
 }
 changeBlob();
 alternateJoke();
-function showMeNextJoke() {
+function pushJoke(value) {
     let obj = {
         data: new Date(),
-        joke: actualJoke,
-        score: (score === 0) ? undefined : (score === 1) ? 1 : (score === 2) ? 2 : 3
+        joke: value,
+        score: score === 0 ? undefined : score === 1 ? 1 : score === 2 ? 2 : 3,
     };
     reportAcudits.push({ obj });
-    score = 0;
-    console.log(reportAcudits);
+}
+function showMeNextJoke() {
     alternateJoke();
     changeBlob();
+    console.log(reportAcudits);
 }
 function assignScoreOne() {
-    score = 1;
+    if (reportAcudits.length >= 1) {
+        let score = 1;
+        let index = reportAcudits.length - 1;
+        reportAcudits[index].obj.score = score;
+    }
+    console.log(reportAcudits);
 }
 function assignScoreTwo() {
-    score = 2;
+    if (reportAcudits.length >= 1) {
+        let score = 2;
+        let index = reportAcudits.length - 1;
+        reportAcudits[index].obj.score = score;
+    }
+    console.log(reportAcudits);
 }
 function assignScoreThree() {
-    score = 3;
+    if (reportAcudits.length >= 1) {
+        let score = 3;
+        let index = reportAcudits.length - 1;
+        reportAcudits[index].obj.score = score;
+    }
+    console.log(reportAcudits);
 }
 function changeBlob() {
-    const blobs = ['blob1', 'blob2', 'blob3', 'blob4'];
+    const blobs = ["blob1", "blob2", "blob3", "blob4"];
     const randomIndex = Math.floor(Math.random() * 4);
     if (section === null || section === void 0 ? void 0 : section.classList.contains(blobs[0])) {
         section.classList.remove(blobs[0]);
@@ -87,7 +104,7 @@ function changeBlob() {
         section.classList.add(blobs[randomIndex]);
     }
 }
-nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener('click', showMeNextJoke);
-btn1 === null || btn1 === void 0 ? void 0 : btn1.addEventListener('click', assignScoreOne);
-btn2 === null || btn2 === void 0 ? void 0 : btn2.addEventListener('click', assignScoreTwo);
-btn3 === null || btn3 === void 0 ? void 0 : btn3.addEventListener('click', assignScoreThree);
+nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener("click", showMeNextJoke);
+btn1 === null || btn1 === void 0 ? void 0 : btn1.addEventListener("click", assignScoreOne);
+btn2 === null || btn2 === void 0 ? void 0 : btn2.addEventListener("click", assignScoreTwo);
+btn3 === null || btn3 === void 0 ? void 0 : btn3.addEventListener("click", assignScoreThree);
