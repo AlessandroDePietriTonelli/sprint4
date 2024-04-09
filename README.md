@@ -43,4 +43,6 @@ Para compilar el código TypeScript, puedes ejecutar el siguiente comando:
 ```bash
 npx tsc
 ```
+## Visualizacion
 
+Para ver el proyecto, ejecuta el archivo index.html con Live Server o ábrelo en el navegador
