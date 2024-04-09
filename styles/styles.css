@@ -1,6 +1,7 @@
 
 .principal {
     /*height: 25rem;*/
+    width: 400px;
     height: 60%;
     position: relative;
 }
@@ -55,7 +56,6 @@ h4 {
 }
 
 #joke {
-    width: 60%;
     max-height: 180px;
     text-align: center;
     align-self: center;

@@ -60,25 +60,9 @@ function showMeNextJoke() {
     changeBlob();
     console.log(reportAcudits);
 }
-function assignScoreOne() {
+function assignScore(value) {
     if (reportAcudits.length >= 1) {
-        let score = 1;
-        let index = reportAcudits.length - 1;
-        reportAcudits[index].obj.score = score;
-    }
-    console.log(reportAcudits);
-}
-function assignScoreTwo() {
-    if (reportAcudits.length >= 1) {
-        let score = 2;
-        let index = reportAcudits.length - 1;
-        reportAcudits[index].obj.score = score;
-    }
-    console.log(reportAcudits);
-}
-function assignScoreThree() {
-    if (reportAcudits.length >= 1) {
-        let score = 3;
+        let score = value;
         let index = reportAcudits.length - 1;
         reportAcudits[index].obj.score = score;
     }
@@ -105,6 +89,3 @@ function changeBlob() {
     }
 }
 nextBtn === null || nextBtn === void 0 ? void 0 : nextBtn.addEventListener("click", showMeNextJoke);
-btn1 === null || btn1 === void 0 ? void 0 : btn1.addEventListener("click", assignScoreOne);
-btn2 === null || btn2 === void 0 ? void 0 : btn2.addEventListener("click", assignScoreTwo);
-btn3 === null || btn3 === void 0 ? void 0 : btn3.addEventListener("click", assignScoreThree);

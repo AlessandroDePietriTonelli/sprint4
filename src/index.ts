@@ -68,9 +68,9 @@ function showMeNextJoke() {
   console.log(reportAcudits);
 }
 
-function assignScoreOne() {
+function assignScore(value:number) {
   if (reportAcudits.length >= 1) {
-    let score = 1;
+    let score = value;
     let index = reportAcudits.length - 1;
     reportAcudits[index].obj.score = score;
   }
@@ -78,23 +78,6 @@ function assignScoreOne() {
   console.log(reportAcudits);
 }
 
-function assignScoreTwo() {
-  if (reportAcudits.length >= 1) {
-    let score = 2;
-    let index = reportAcudits.length - 1;
-    reportAcudits[index].obj.score = score;
-  }
-  console.log(reportAcudits);
-}
-
-function assignScoreThree() {
-  if (reportAcudits.length >= 1) {
-    let score = 3;
-    let index = reportAcudits.length - 1;
-    reportAcudits[index].obj.score = score;
-  }
-  console.log(reportAcudits);
-}
 
 function changeBlob() {
   const blobs = ["blob1", "blob2", "blob3", "blob4"];
@@ -115,6 +98,3 @@ function changeBlob() {
 }
 
 nextBtn?.addEventListener("click", showMeNextJoke);
-btn1?.addEventListener("click", assignScoreOne);
-btn2?.addEventListener("click", assignScoreTwo);
-btn3?.addEventListener("click", assignScoreThree);
